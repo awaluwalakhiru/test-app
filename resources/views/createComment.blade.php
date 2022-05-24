@@ -1,14 +1,7 @@
 @extends('layouts.main')
 @section('content')
-{{-- @extends('layouts.content.content') --}}
-{{-- @include('layouts.content.content',$comments) --}}
-
-
-
 
 <main class="py-4">
-    {{-- @yield('content') --}}
-
     <div class="container mt-3">
         <div class="row justify-content-center d-none">
             <div class="col-md-12">
@@ -16,15 +9,6 @@
                     <div class="card-header">@yield('title_content')</div>
 
                     <div class="card-body">
-                        {{-- @yield('flash_message') --}}
-                        {{-- @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            Dashboard Guest
-                            {{ session('status') }}
-                        </div>
-                        @endif --}}
-
-                        {{-- {{ __('You are logged in!') }} --}}
                     </div>
                 </div>
             </div>
@@ -32,10 +16,6 @@
 
 
         <div class="row justify-content-center">
-            {{-- @foreach ($comments as $comment) --}}
-            @php
-            // dump($comment);
-            @endphp
             <form action="{{ route('comment.store') }}" method="post">
                 @csrf
                 <div class="row justify-content-center">

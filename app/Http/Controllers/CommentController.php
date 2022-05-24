@@ -9,11 +9,11 @@ use Illuminate\Support\Facades\Route;
 
 class CommentController extends Controller
 {
-    public function create($postId, $userId = 0)
+    public function create($postId)
     {
         $route = Route::currentRouteName();
         $post_id = $postId;
-        $user_id = Auth::user()->id;
+        $user_id = Auth::user()->id ?? 0;
         return view('createComment', compact('route', 'post_id', 'user_id'));
     }
 
